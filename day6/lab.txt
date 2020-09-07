@@ -1,0 +1,43 @@
+Lab1 - Create a table Emp (empno, ename, salry, email)
+do crud operations on this table
+
+Lab 2 - 
+  create table dept
+    (deptno tinyint  primary key,
+    dname varchar(20),
+    loc char(3))
+----------------        
+Create table dept
+(deptno tinyint  ,
+ dname varchar(20),
+ loc char(3),
+ constraint 'deptpk' Primary Key (deptno)
+ );
+ 
+Create table Emp  -> 1. empno - pk, deptno (foreign key to Dept.deptno)
+(empno, ename, salary , deptno 
+		 
+Insert records in emp (6 records)
+10 - 1 record 
+20 - 2 records
+30 - 3 records
+40 - 0
+		 
+		  
+
+Dept(1)------(*)Emp
+Create table Emp
+{
+empno, ename,salary
+deptno
+}
+
+Lab2 - Emp<------------------->Address
+empno(pk)----------------Address -> 
+						empno(pk)-----> fkey
+						
+Insert 3 records
+1. insert a record in Emp not in address
+2. insert a record in Address not in emp
+3. insert a duplicate in Emp as well as Address
+

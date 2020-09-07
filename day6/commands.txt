@@ -1,0 +1,77 @@
+create table dept
+(deptno tinyint primary key,
+ dname varchar(20),
+ loc char(3))
+                    
+		  
+CRUD (SQL) -> Select ...
+
+insert into dept values (10,'HR','Hyd');
+insert into dept values (20,'IT','Blr' );
+
+insert into dept values (30,'Fin','Hyd');
+insert into dept values (40,'Training','Blr');
+select * from dept;
+
+update dept set loc='Pnq' where deptno=30;
+
+delete from dept where loc='pnq';
+select * from dept;
+
+
+select count(*) from emp;
+
+select job, max(sal) from emp
+group by job
+having job='MANAGER'
+
+SELECT ename, d.deptno, d.dname
+FROM dept d, emp e
+where d.deptno = e.deptno
+
+select deptno from dept;
+select deptno, count(*) from emp group by deptno
+
+
+
+
+
+
+
+create table emp1
+(empno tinyint , 
+ ename char(20), 
+ salary int, 
+ CONSTRAINT pkEmp primary key (empno)
+);
+
+create table emp2
+(empno tinyint , 
+ ename char(20), 
+ comm int, 
+ CONSTRAINT pkEmp primary key (empno)
+);
+
+insert into emp1 values(1,'First',111);
+insert into emp1 values(2,'Second',222);
+insert into emp1 values(3,'Third',333);
+insert into emp2 values(3,'Third',333);
+insert into emp2 values(4,'Four',1);
+insert into emp2 values(5,'Five',2);
+insert into emp2 values(6,'Six',3);
+
+select * from emp1
+union 
+select * from emp2
+
+select * from emp1
+union all
+select * from emp2
+
+
+
+select empno, ename,salary, 0 as comm from emp1
+union
+select empno, ename, 0 as salary,  comm from emp2
+
+
